@@ -6,14 +6,14 @@ import AddFieldPanel from "./components/AddFieldPanel";
 import SubmitResult from "./components/SubmitResult";
 import { registrationSchema, jobApplicationSchema } from "./config/sampleSchemas";
 
-// ─── Tab definitions ───────────────────────────────────────────────────────────
+// Tab definitions
 const TABS = [
   { id: "registration", label: "📋 Registration", icon: "📋" },
   { id: "job", label: "💼 Job Application", icon: "💼" },
   { id: "builder", label: "🛠 Schema Builder", icon: "🛠" },
 ];
 
-// ─── Per-tab form metadata ──────────────────────────────────────────────────
+// Per-tab form metadata
 const FORM_META = {
   registration: {
     title: "User Registration",
@@ -34,7 +34,7 @@ const FORM_META = {
   },
 };
 
-// ─── FormPage — renders one form tab ──────────────────────────────────────────
+// FormPage — renders one form tab
 function FormPage({ meta, showBuilder = false }) {
   const [dynamicNames, setDynamicNames] = useState([]);
   const [showPanel, setShowPanel] = useState(false);
@@ -166,7 +166,7 @@ function FormPage({ meta, showBuilder = false }) {
   );
 }
 
-// ─── App root ─────────────────────────────────────────────────────────────────
+// App root
 export default function App() {
   const [activeTab, setActiveTab] = useState("registration");
   const meta = FORM_META[activeTab];
@@ -208,15 +208,7 @@ export default function App() {
       {/* Footer */}
       <footer className="app-footer">
         <p>
-          FormForge · Dynamic Form Builder with Runtime Validation ·{" "}
-          <a
-            href="https://github.com"
-            target="_blank"
-            rel="noreferrer"
-            className="footer-link"
-          >
-            GitHub
-          </a>
+          FormForge · Dynamic Form Builder with Runtime Validation
         </p>
       </footer>
     </div>
