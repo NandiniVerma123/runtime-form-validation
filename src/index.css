@@ -1,0 +1,179 @@
+/* ============================================================
+   FormForge — Global Design System
+   index.css  |  Reset · Tokens · Typography · Utilities
+   ============================================================ */
+
+/* ── Google Fonts ───────────────────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+
+/* ── Design Tokens ──────────────────────────────────────────── */
+:root {
+  /* Palette — Purple / Violet */
+  --clr-primary-50: hsl(270 100% 97%);
+  --clr-primary-100: hsl(270 95% 92%);
+  --clr-primary-200: hsl(270 90% 83%);
+  --clr-primary-400: hsl(270 80% 65%);
+  --clr-primary-500: hsl(270 75% 55%);
+  /* main accent */
+  --clr-primary-600: hsl(270 72% 46%);
+  --clr-primary-700: hsl(270 70% 38%);
+
+  /* Neutral scale */
+  --clr-neutral-0: hsl(0 0% 100%);
+  --clr-neutral-50: hsl(240 8% 98%);
+  --clr-neutral-100: hsl(240 7% 95%);
+  --clr-neutral-200: hsl(240 6% 90%);
+  --clr-neutral-300: hsl(240 5% 80%);
+  --clr-neutral-400: hsl(240 4% 65%);
+  --clr-neutral-500: hsl(240 4% 46%);
+  --clr-neutral-600: hsl(240 5% 34%);
+  --clr-neutral-700: hsl(240 6% 22%);
+  --clr-neutral-800: hsl(240 8% 14%);
+  --clr-neutral-900: hsl(240 10% 8%);
+
+  /* Semantic */
+  --clr-success-50: hsl(142 72% 95%);
+  --clr-success-500: hsl(142 72% 42%);
+  --clr-success-600: hsl(142 72% 34%);
+  --clr-error-50: hsl(0 90% 96%);
+  --clr-error-400: hsl(0 80% 62%);
+  --clr-error-500: hsl(0 76% 52%);
+  --clr-error-600: hsl(0 73% 42%);
+  --clr-warning-50: hsl(38 95% 95%);
+  --clr-warning-500: hsl(38 90% 50%);
+
+  /* Theme surface tokens (light mode) */
+  --surface-app: var(--clr-neutral-50);
+  --surface-card: var(--clr-neutral-0);
+  --surface-input: var(--clr-neutral-0);
+  --surface-code: hsl(240 10% 97%);
+  --surface-hover: var(--clr-primary-50);
+
+  --text-primary: var(--clr-neutral-900);
+  --text-secondary: var(--clr-neutral-500);
+  --text-muted: var(--clr-neutral-400);
+  --text-inverse: var(--clr-neutral-0);
+
+  --border-default: var(--clr-neutral-200);
+  --border-focus: var(--clr-primary-500);
+  --border-error: var(--clr-error-500);
+
+  --accent: var(--clr-primary-500);
+  --accent-light: var(--clr-primary-50);
+  --accent-dark: var(--clr-primary-600);
+
+  /* Elevation */
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, .05);
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, .08), 0 1px 2px rgba(0, 0, 0, .06);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, .08), 0 2px 4px -1px rgba(0, 0, 0, .06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, .09), 0 4px 6px -2px rgba(0, 0, 0, .05);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, .10), 0 10px 10px -5px rgba(0, 0, 0, .04);
+  --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, .18);
+  --shadow-accent: 0 0 0 3px hsl(270 75% 55% / 0.25);
+
+  /* Spacing scale */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+
+  /* Radius */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-xl: 20px;
+  --radius-full: 9999px;
+
+  /* Typography */
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, Consolas, monospace;
+
+  /* Transitions */
+  --transition-fast: 120ms ease;
+  --transition-base: 200ms ease;
+  --transition-slow: 350ms ease;
+
+  /* Layout */
+  --header-h: 64px;
+  --sidebar-w: 340px;
+  --content-max: 780px;
+}
+
+/* Dark Mode removed as project is strictly light theme */
+/* ── Global Reset ───────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-sans);
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--text-primary);
+  background: var(--surface-app);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100dvh;
+}
+
+#root {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.2;
+}
+
+p {
+  color: var(--text-secondary);
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+button {
+  font-family: var(--font-sans);
+  cursor: pointer;
+}
+
+input,
+select,
+textarea {
+  font-family: var(--font-sans);
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
