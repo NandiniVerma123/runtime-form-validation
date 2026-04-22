@@ -129,7 +129,3 @@ Show fields conditionally based on other field values:
 - **React 19** – UI framework
 - **Vite** – Build tool with HMR
 - **ESLint** – Code linting
-
-## License
-
-MIT
